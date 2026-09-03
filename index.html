@@ -1,1 +1,698 @@
+<!DOCTYPE html><html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOVA — дизайн и ремонт</title>
+<meta name="description" content="NOVA — студия дизайна и ремонта квартир. Рассчитайте стоимость ремонта онлайн."><style>
+*{box-sizing:border-box;margin:0;padding:0}
 
+html{scroll-behavior:smooth}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#0b0b0b;
+    color:#fff;
+    line-height:1.5;
+}
+
+a{text-decoration:none;color:inherit}
+
+.container{
+    width:min(1120px,92%);
+    margin:auto;
+}
+
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(11,11,11,.92);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #222;
+}
+
+.nav{
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:3px;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    color:#aaa;
+    font-size:14px;
+}
+
+.nav-links a:hover{color:#fff}
+
+/* BUTTON */
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:0;
+    border-radius:10px;
+    padding:14px 22px;
+    background:#fff;
+    color:#000;
+    font-weight:700;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    opacity:.9;
+}
+
+.btn-dark{
+    background:#191919;
+    color:#fff;
+    border:1px solid #333;
+}
+
+/* HERO */
+
+.hero{
+    min-height:680px;
+    display:flex;
+    align-items:center;
+    background:
+        radial-gradient(circle at 80% 30%,#242424 0,transparent 35%),
+        linear-gradient(135deg,#111,#080808);
+}
+
+.hero-content{
+    max-width:760px;
+    padding:80px 0;
+}
+
+.badge{
+    display:inline-block;
+    border:1px solid #333;
+    color:#aaa;
+    padding:8px 13px;
+    border-radius:30px;
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+h1{
+    font-size:clamp(45px,8vw,88px);
+    line-height:.98;
+    letter-spacing:-4px;
+    margin-bottom:28px;
+}
+
+.hero p{
+    max-width:620px;
+    color:#aaa;
+    font-size:19px;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+/* STATS */
+
+.stats{
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.stat{
+    padding:30px 15px;
+    border-right:1px solid #222;
+}
+
+.stat:last-child{border-right:0}
+
+.stat strong{
+    display:block;
+    font-size:30px;
+    margin-bottom:5px;
+}
+
+.stat span{
+    color:#777;
+    font-size:13px;
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 0;
+}
+
+.section-label{
+    color:#777;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:12px;
+    margin-bottom:12px;
+}
+
+.section-title{
+    font-size:clamp(32px,5vw,55px);
+    letter-spacing:-2px;
+    margin-bottom:45px;
+}
+
+/* SERVICES */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.card{
+    background:#111;
+    border:1px solid #242424;
+    border-radius:16px;
+    padding:28px;
+}
+
+.card-number{
+    color:#666;
+    font-size:13px;
+    margin-bottom:55px;
+}
+
+.card h3{
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#888;
+    font-size:15px;
+}
+
+/* CALCULATOR */
+
+.calculator{
+    background:#101010;
+    border:1px solid #252525;
+    border-radius:20px;
+    padding:35px;
+}
+
+.calc-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.calc-title{
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.field{
+    margin-bottom:25px;
+}
+
+.field label{
+    display:block;
+    color:#aaa;
+    margin-bottom:10px;
+    font-size:14px;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="tel"]{
+    width:100%;
+    padding:15px;
+    border-radius:10px;
+    border:1px solid #333;
+    background:#080808;
+    color:#fff;
+    font-size:16px;
+    outline:none;
+}
+
+input:focus{
+    border-color:#777;
+}
+
+.radio{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.radio label{
+    border:1px solid #333;
+    padding:12px 15px;
+    border-radius:10px;
+    cursor:pointer;
+    color:#aaa;
+}
+
+.radio input{
+    margin-right:7px;
+}
+
+.checkbox{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#aaa;
+    margin-bottom:12px;
+}
+
+.total-box{
+    height:100%;
+    min-height:280px;
+    border:1px solid #333;
+    border-radius:15px;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    background:#0b0b0b;
+}
+
+.total-label{
+    color:#777;
+    margin-bottom:8px;
+}
+
+.total{
+    font-size:48px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.total-box p{
+    color:#777;
+    font-size:13px;
+}
+
+/* PROJECTS */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.project{
+    min-height:330px;
+    border-radius:16px;
+    border:1px solid #252525;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    background:linear-gradient(145deg,#242424,#101010);
+}
+
+.project:nth-child(2){
+    background:linear-gradient(145deg,#1b1b1b,#303030);
+}
+
+.project:nth-child(3){
+    background:linear-gradient(145deg,#303030,#111);
+}
+
+.project small{
+    color:#999;
+    margin-bottom:6px;
+}
+
+.project h3{
+    font-size:24px;
+}
+
+/* PROCESS */
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.step{
+    border-top:1px solid #333;
+    padding-top:20px;
+}
+
+.num{
+    font-size:13px;
+    color:#666;
+    margin-bottom:45px;
+}
+
+.step h3{
+    margin-bottom:8px;
+}
+
+.step p{
+    color:#777;
+    font-size:14px;
+}
+
+/* FORM */
+
+.contact{
+    background:#f2f2f2;
+    color:#111;
+    border-radius:24px;
+    padding:60px;
+}
+
+.contact .section-label{
+    color:#777;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+}
+
+.contact-text h2{
+    font-size:clamp(35px,5vw,60px);
+    line-height:1;
+    letter-spacing:-2px;
+    margin-bottom:20px;
+}
+
+.contact-text p{
+    color:#666;
+}
+
+.form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.form input{
+    background:#fff;
+    color:#111;
+    border:1px solid #ccc;
+}
+
+.form .btn{
+    margin-top:5px;
+}
+
+.form-note{
+    font-size:11px;
+    color:#888;
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px 0;
+    border-top:1px solid #222;
+    color:#666;
+    font-size:13px;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav-links{display:none}
+
+    .hero{
+        min-height:600px;
+    }
+
+    .hero-content{
+        padding:60px 0;
+    }
+
+    h1{
+        letter-spacing:-2px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat:nth-child(2){
+        border-right:0;
+    }
+
+    .services,
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .calc-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .process{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .calculator{
+        padding:22px;
+    }
+
+    .contact{
+        padding:30px 20px;
+    }
+
+    .total{
+        font-size:38px;
+    }
+
+    section{
+        padding:70px 0;
+    }
+}
+
+@media(max-width:500px){
+
+    .process{
+        grid-template-columns:1fr;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-buttons .btn{
+        width:100%;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+</style></head><body><header>
+<div class="container nav"><a href="#" class="logo">NOVA</a>
+
+<nav class="nav-links">
+<a href="#services">Услуги</a>
+<a href="#calculator">Калькулятор</a>
+<a href="#projects">Проекты</a>
+<a href="#contact">Контакты</a>
+</nav><a href="#contact" class="btn">Обсудить проект</a>
+
+</div>
+</header><main><section class="hero">
+<div class="container hero-content"><div class="badge">ДИЗАЙН • РЕМОНТ • ИНТЕРЬЕР</div><h1>Пространства,<br>в которых хочется жить.</h1><p>
+NOVA создаёт современные интерьеры и берёт ремонт под ключ —
+от первой идеи до финального результата.
+</p><div class="hero-buttons">
+<a href="#calculator" class="btn">Рассчитать стоимость</a>
+<a href="#projects" class="btn btn-dark">Смотреть проекты</a>
+</div></div>
+</section><section class="stats">
+<div class="container stats-grid"><div class="stat">
+<strong>50+</strong>
+<span>реализованных проектов</span>
+</div><div class="stat">
+<strong>7 лет</strong>
+<span>опыта команды</span>
+</div><div class="stat">
+<strong>100%</strong>
+<span>контроль ремонта</span>
+</div><div class="stat">
+<strong>1 команда</strong>
+<span>от идеи до сдачи</span>
+</div></div>
+</section><section id="services">
+<div class="container"><div class="section-label">01 / Услуги</div>
+<h2 class="section-title">Что мы делаем</h2><div class="services"><div class="card">
+<div class="card-number">01</div>
+<h3>Дизайн интерьера</h3>
+<p>Создаём концепцию, планировку, визуализации и рабочую документацию.</p>
+</div><div class="card">
+<div class="card-number">02</div>
+<h3>Ремонт под ключ</h3>
+<p>Организуем весь процесс ремонта и контролируем качество на каждом этапе.</p>
+</div><div class="card">
+<div class="card-number">03</div>
+<h3>Комплектация</h3>
+<p>Подбираем материалы, мебель, свет и другие элементы интерьера.</p>
+</div></div>
+</div>
+</section><section id="calculator">
+<div class="container"><div class="section-label">02 / Калькулятор</div>
+<h2 class="section-title">Рассчитайте бюджет</h2><div class="calculator"><div class="calc-grid"><div><div class="field">
+<div class="calc-title">Параметры проекта</div><label>Площадь квартиры, м²</label>
+<input id="area" type="number" min="1" value="60" oninput="calculate()">
+
+</div><div class="field"><label>Тип ремонта</label>
+
+<div class="radio"><label>
+<input type="radio" name="repair" value="20000" checked onchange="calculate()">
+Косметический
+</label><label>
+<input type="radio" name="repair" value="35000" onchange="calculate()">
+Стандарт
+</label><label>
+<input type="radio" name="repair" value="55000" onchange="calculate()">
+Премиум
+</label></div>
+</div><div class="field"><label>Дополнительные работы</label>
+
+<label class="checkbox">
+<input type="checkbox" value="150000" onchange="calculate()">
+Дизайн-проект
+</label><label class="checkbox">
+<input type="checkbox" value="100000" onchange="calculate()">
+Авторский надзор
+</label><label class="checkbox">
+<input type="checkbox" value="120000" onchange="calculate()">
+Комплектация
+</label></div></div><div class="total-box"><div class="total-label">Предварительная стоимость</div><div class="total" id="total">2 350 000 ₽</div><p>
+Расчёт является предварительным. Точная стоимость определяется после обсуждения проекта и состава работ.
+</p><a href="#contact" class="btn" style="margin-top:25px">
+Получить точный расчёт
+</a></div></div></div>
+</div>
+</section><section id="projects">
+<div class="container"><div class="section-label">03 / Проекты</div>
+<h2 class="section-title">Наши проекты</h2><div class="projects"><div class="project">
+<small>Квартира • 82 м²</small>
+<h3>Modern Apartment</h3>
+</div><div class="project">
+<small>Апартаменты • 64 м²</small>
+<h3>Urban Space</h3>
+</div><div class="project">
+<small>Дом • 145 м²</small>
+<h3>Minimal House</h3>
+</div></div>
+</div>
+</section><section>
+<div class="container"><div class="section-label">04 / Процесс</div>
+<h2 class="section-title">Как мы работаем</h2><div class="process"><div class="step">
+<div class="num">01</div>
+<h3>Знакомство</h3>
+<p>Обсуждаем задачу, бюджет и ваши пожелания.</p>
+</div><div class="step">
+<div class="num">02</div>
+<h3>Концепция</h3>
+<p>Разрабатываем дизайн и согласовываем решения.</p>
+</div><div class="step">
+<div class="num">03</div>
+<h3>Реализация</h3>
+<p>Выполняем ремонт и контролируем каждый этап.</p>
+</div><div class="step">
+<div class="num">04</div>
+<h3>Готовый интерьер</h3>
+<p>Передаём вам полностью готовое пространство.</p>
+</div></div>
+</div>
+</section><section id="contact">
+<div class="container"><div class="contact"><div class="contact-grid"><div class="contact-text"><div class="section-label">05 / Контакты</div><h2>Готовы обсудить ваш проект?</h2><p>
+Оставьте заявку — мы свяжемся с вами и обсудим детали ремонта.
+</p></div><form class="form" onsubmit="sendForm(event)"><input id="name" type="text" placeholder="Ваше имя" required><input id="phone" type="tel" placeholder="Телефон или Telegram" required><input id="comment" type="text" placeholder="Кратко о проекте"><button type="submit" class="btn">
+Отправить заявку
+</button><div class="form-note">
+Нажимая кнопку, вы соглашаетесь на обработку предоставленных данных.
+</div></form></div></div></div>
+</section></main><footer>
+<div class="container footer-inner">
+<div>© 2026 NOVA Studio</div>
+<div>Дизайн и ремонт под ключ</div>
+</div>
+</footer><script>
+
+function calculate(){
+
+    const areaInput = document.getElementById("area");
+
+    const area = Number(areaInput.value) || 0;
+
+    const selected = document.querySelector('input[name="repair"]:checked');
+
+    const pricePerMeter = selected ? Number(selected.value) : 35000;
+
+    let total = area * pricePerMeter;
+
+    const extras = document.querySelectorAll('.checkbox input:checked');
+
+    extras.forEach(function(item){
+        total += Number(item.value);
+    });
+
+    document.getElementById("total").textContent =
+        new Intl.NumberFormat("ru-RU").format(total) + " ₽";
+}
+
+function sendForm(event){
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const comment = document.getElementById("comment").value;
+
+    const message =
+        "Спасибо, " + name + "!%0A%0A" +
+        "Ваша заявка принята.%0A" +
+        "Контакт: " + phone + "%0A" +
+        "Комментарий: " + comment;
+
+    alert(
+        "Спасибо, " + name + "!\n\n" +
+        "Заявка заполнена. Следующим шагом мы подключим отправку заявки прямо в Telegram."
+    );
+
+}
+
+calculate();
+
+</script></body>
+  </html>
